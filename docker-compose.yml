@@ -1,0 +1,37 @@
+services:
+  frontend:
+    build: ../devops-frontend
+    ports:
+      - "3000:80"
+    networks:
+      - devops-network
+    depends_on:
+      - backend
+    restart: always
+
+  backend:
+    build: ../devops-backend
+    # ports:
+    #   - "8000:8000"
+    volumes:
+      - backend-data:/data
+    networks:
+      - devops-network
+    restart: always
+
+  nginx:
+    build: ../nginx
+    ports:
+      - "3001:80"
+    networks:
+      - devops-network
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  backend-data:
+
+networks:
+  devops-network:
+    driver: bridge
