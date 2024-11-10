@@ -1,0 +1,4 @@
+- name: Stop microservices
+  command: docker-compose down
+  args:
+    chdir: /path/to/your/devops

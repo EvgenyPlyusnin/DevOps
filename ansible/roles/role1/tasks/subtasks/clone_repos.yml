@@ -1,0 +1,15 @@
+- name: Clone frontend repository
+  git:
+    repo: "https://github.com/your_username/frontend_repo.git"
+    dest: /path/to/your/frontend
+  become: true
+- name: Clone backend repository
+  git:
+    repo: "https://github.com/your_username/backend_repo.git"
+    dest: /path/to/your/backend
+  become: true
+- name: Clone DevOps repository
+  git:
+    repo: "https://github.com/your_username/devops_repo.git"
+    dest: /path/to/your/devops
+  become: true
