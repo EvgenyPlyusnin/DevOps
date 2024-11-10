@@ -1,4 +1,4 @@
 - name: Start microservices
   command: docker-compose up -d
   args:
-    chdir: /path/to/your/devops
+    chdir: /laba/devops

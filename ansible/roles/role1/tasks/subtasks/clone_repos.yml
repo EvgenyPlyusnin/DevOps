@@ -1,15 +1,15 @@
 - name: Clone frontend repository
   git:
-    repo: "https://github.com/your_username/frontend_repo.git"
-    dest: /path/to/your/frontend
+    repo: "https://github.com/EvgenyPlyusnin/devops-frontend.git"
+    dest: /laba/devops-frontend
   become: true
 - name: Clone backend repository
   git:
-    repo: "https://github.com/your_username/backend_repo.git"
-    dest: /path/to/your/backend
+    repo: "https://github.com/EvgenyPlyusnin/devops-backend.git"
+    dest: /laba/devops-backend
   become: true
 - name: Clone DevOps repository
   git:
-    repo: "https://github.com/your_username/devops_repo.git"
-    dest: /path/to/your/devops
+    repo: "https://github.com/EvgenyPlyusnin/DevOps.git"
+    dest: /laba/devops
   become: true
