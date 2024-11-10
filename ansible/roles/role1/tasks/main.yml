@@ -1,3 +1,53 @@
-- include_tasks: install_docker.yml
-- include_tasks: clone_repos.yml
-- include_tasks: start_services.yml
+- name: Install Docker
+  apt:
+    name: docker.io
+    state: present
+  become: true
+  tags:
+    - deploy
+
+- name: Install Docker Compose
+  apt:
+    name: docker-compose
+    state: present
+  become: true
+  tags:
+    - deploy
+
+- name: Clone frontend repository
+  git:
+    repo: "https://github.com/EvgenyPlyusnin/devops-frontend.git"
+    dest: /laba/devops-frontend
+  become: true
+  tags:
+    - deploy
+
+- name: Clone backend repository
+  git:
+    repo: "https://github.com/EvgenyPlyusnin/devops-backend.git"
+    dest: /laba/devops-backend
+  become: true
+  tags:
+    - deploy
+
+- name: Clone DevOps repository
+  git:
+    repo: "https://github.com/EvgenyPlyusnin/DevOps.git"
+    dest: /laba/devops
+  become: true
+  tags:
+    - deploy
+
+- name: Start microservices
+  command: docker-compose up -d
+  args:
+    chdir: /laba/devops
+  tags:
+    - start
+
+- name: Stop microservices
+  command: docker-compose down
+  args:
+    chdir: /laba/devops
+  tags:
+    - stop

@@ -3,13 +3,19 @@
     repo: "https://github.com/EvgenyPlyusnin/devops-frontend.git"
     dest: /laba/devops-frontend
   become: true
+  tags:
+    - deploy
 - name: Clone backend repository
   git:
     repo: "https://github.com/EvgenyPlyusnin/devops-backend.git"
     dest: /laba/devops-backend
   become: true
+  tags:
+    - deploy
 - name: Clone DevOps repository
   git:
     repo: "https://github.com/EvgenyPlyusnin/DevOps.git"
     dest: /laba/devops
   become: true
+  tags:
+    - deploy

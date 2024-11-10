@@ -2,3 +2,5 @@
   command: docker-compose down
   args:
     chdir: /laba/devops
+  tags:
+    - stop
