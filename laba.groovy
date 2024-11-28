@@ -7,7 +7,9 @@ pipeline {
                 ansiblePlaybook(
                     playbook: './ansible/firstPlaybook.yml',
                     inventory: './ansible/inventory/stend1/hosts',
-                    tags: 'deploy'
+                    hostKeyChecking: false,
+                    disableHostKeyChecking: true,
+                    tags: 'deploy',
                 )
             }
         }
@@ -17,6 +19,8 @@ pipeline {
                 ansiblePlaybook(
                     playbook: './ansible/firstPlaybook.yml',
                     inventory: './ansible/inventory/stend1/hosts',
+                    hostKeyChecking: false,
+                    disableHostKeyChecking: true,
                     tags: 'start'
                 )
             }
