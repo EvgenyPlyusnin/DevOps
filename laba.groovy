@@ -5,7 +5,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 ansiblePlaybook(
-                    playbook: './ansible/ansible.cfg',
+                    playbook: './ansible/firstPlaybook.yml',
                     inventory: './ansible/inventory/stend1/hosts',
                     tags: 'deploy'
                 )
@@ -15,7 +15,7 @@ pipeline {
         stage('Start') {
             steps {
                 ansiblePlaybook(
-                    playbook: './ansible/ansible.cfg',
+                    playbook: './ansible/firstPlaybook.yml',
                     inventory: './ansible/inventory/stend1/hosts',
                     tags: 'start'
                 )
