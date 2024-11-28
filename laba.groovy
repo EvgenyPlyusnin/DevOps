@@ -9,7 +9,7 @@ pipeline {
                     inventory: './ansible/inventory/stend1/hosts',
                     hostKeyChecking: false,
                     disableHostKeyChecking: true,
-                    credentialsId: '~/.ssh/id_rsa',
+                    credentialsId: 'id_rsa',
                     tags: 'deploy',
                 )
             }
@@ -22,7 +22,7 @@ pipeline {
                     inventory: './ansible/inventory/stend1/hosts',
                     hostKeyChecking: false,
                     disableHostKeyChecking: true,
-                    credentialsId: '~/.ssh/id_rsa',
+                    credentialsId: 'id_rsa',
                     tags: 'start'
                 )
             }
